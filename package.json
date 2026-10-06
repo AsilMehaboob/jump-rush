@@ -1,0 +1,38 @@
+{
+  "name": "human-runner",
+  "productName": "HumanRunner",
+  "version": "1.0.0",
+  "description": "Offline motion-controlled endless runner",
+  "main": "dist-electron/main.cjs",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build:electron": "node scripts/build-electron.mjs",
+    "build:renderer": "tsc --noEmit && vite build",
+    "build": "npm run build:renderer && npm run build:electron",
+    "start": "electron .",
+    "dist": "npm run build && electron-builder --win nsis",
+    "postinstall": "node scripts/fetch-models.mjs"
+  },
+  "dependencies": {
+    "@fontsource/fredoka": "^5.3.0",
+    "@fontsource/lilita-one": "^5.3.0",
+    "@mediapipe/tasks-vision": "^1.0.1",
+    "phaser": "^4.2.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "concurrently": "^10.0.5",
+    "electron": "^44.5.1",
+    "electron-builder": "^26.15.3",
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.3",
+    "wait-on": "^9.5.1"
+  }
+}

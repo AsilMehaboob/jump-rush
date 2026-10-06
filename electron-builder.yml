@@ -1,0 +1,14 @@
+appId: com.humanrunner.app
+productName: HumanRunner
+directories:
+  output: release
+files:
+  - dist/**
+  - dist-electron/**
+  - package.json
+win:
+  target: nsis
+  artifactName: HumanRunner Setup.${ext}
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
